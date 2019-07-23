@@ -8,8 +8,12 @@ type AppTest struct {
 	testing.TestSuite
 }
 
+type ApiTest struct {
+	testing.TestSuite
+}
+
 func (t *AppTest) Before() {
-	println("Set up")
+	// println("Set up")
 }
 
 func (t *AppTest) TestThatIndexPageWorks() {
@@ -19,5 +23,11 @@ func (t *AppTest) TestThatIndexPageWorks() {
 }
 
 func (t *AppTest) After() {
-	println("Tear down")
+	// println("Tear down")
+}
+
+func (t *ApiTest) TestThatJSONAPIWorks() {
+	t.Get("/Api/Today")
+	t.AssertOk()
+	t.AssertContentType("application/json; charset=utf-8")
 }
