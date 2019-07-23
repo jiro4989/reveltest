@@ -1,0 +1,27 @@
+= reveltest
+
+GoのWebフレームワーク https://revel.github.io/[Revel]の練習用プロジェクトです。
+
+== 前提条件
+
+以下のツールが必要です。
+
+* docker
+* docker-compose
+
+== 動かし方
+
+[source,bash]
+----
+docker-compose up
+----
+
+== アクセス
+
+http://localhost:9000/
+
+== 仕組み
+
+なんでかわからないけれど、2019/07/23 にRevel公式チュートリアルを実施してもまとも
+に動かなかったので、ホストPCのソースプロジェクトをコンテナ内にマウントしてrevel
+コマンドでアプリを起動するようにしてみた。
